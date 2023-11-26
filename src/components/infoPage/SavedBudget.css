@@ -1,0 +1,29 @@
+.saved-budget {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 3rem;
+}
+
+.budget-left {
+    display :flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.budget-left > span:first-child {
+    font-size: 14px;
+}
+
+.budget-left > span:nth-child(2) {
+    margin-top: .5rem;
+    font-size: 28px;
+}
+
+.spec-button {
+    text-decoration: none;
+    color: #333333;
+    border: 1px solid #999999;
+    border-radius: 5rem;
+    padding: .5rem;
+}

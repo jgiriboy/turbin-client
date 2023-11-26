@@ -1,0 +1,22 @@
+@import url('../../css/reset.css');
+
+.index-note {
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    
+}
+
+.index-note-icon {
+    margin-right: 1rem;
+}
+
+.index-note-text {
+    font-size: 14px;
+    color: #666666;
+}
+
+.index-note-text-border {
+    width:100%;
+    text-align: center;
+}

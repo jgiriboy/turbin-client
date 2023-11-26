@@ -1,0 +1,21 @@
+@import url('../../css/reset.css');
+
+.index-nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 3rem 2rem 1.5rem 2rem;
+}
+
+.nav-logo{
+    font-size: 18px;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-menu-item {
+    margin-left: 2rem;
+}

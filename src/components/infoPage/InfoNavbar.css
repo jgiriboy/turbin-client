@@ -1,0 +1,26 @@
+@import url('../../css/font.css');
+
+.info-navbar {
+    display: flex;
+    align-items: center;
+    padding: 2rem 1rem;
+}
+.info-navbar-text {
+    padding-left: 2rem;
+}
+
+.info-navbar-button {
+    cursor: pointer;
+}
+.info-navbar-button > img {
+    rotate: 180deg;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+.navbar-text-top > span {
+    font-size: 18px;
+}
+.navbar-text-bottom > span {
+    font-size: 14px;
+    color: #999999;
+}
