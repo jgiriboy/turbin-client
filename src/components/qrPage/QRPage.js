@@ -1,52 +1,36 @@
 import React, { Component } from 'react';
-import QrReader from 'react-qr-scanner';
+import { QrReader } from 'react-qr-reader';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import './QRPage.css';
 
-class Test extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            delay: 100,
-            result: 'No result',
-        };
+const QRPage = (props) => {
+    const [data, setData] = useState('No result');
 
-        this.handleScan = this.handleScan.bind(this);
-    }
-    // 여기서 스캔 성공했을 때 동작 정의하면 됨.
-    handleScan(data) {
-        if (data) {
-            console.log(data);
-        }
-    }
-    handleError(err) {
-        console.error(err);
-    }
-    render() {
-        const previewStyle = {
-            height: '100%',
-            width: '100%',
-        };
-
-        return (
-            <div className='qr-page'>
-                <div className='qr-page-nav'>
-                    <Link to='/' className='qr-back-btn'>
-                        <img src='/images/cancel.svg' />
-                    </Link>
-                    <span>코드 스캔</span>
-                </div>
-                <QrReader
-                    delay={this.state.delay}
-                    style={previewStyle}
-                    facingmode='rear'
-                    onError={this.handleError}
-                    onScan={this.handleScan}
-                />
+    return (
+        <div className='qr-page'>
+            <div className='qr-page-nav'>
+                <Link to='/'>
+                    <img src='/images/cancel.svg' />
+                </Link>
             </div>
-        );
-    }
-}
+            <div className='qr-text'>코드 스캔</div>
+            <QrReader
+                onResult={(result, error) => {
+                    if (!!result) {
+                        setData(result?.text);
+                    }
 
-export default Test;
+                    if (!!error) {
+                        console.info(error);
+                    }
+                }}
+                style={{ width: '100%', height: '100%' }}
+                constraints={{ facingMode: 'environment' }}
+            />
+        </div>
+    );
+};
+
+export default QRPage;

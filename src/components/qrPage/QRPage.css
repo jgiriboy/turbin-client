@@ -1,14 +1,20 @@
-.qr-page-nav {
-    padding: 4rem 2rem 1rem;
-    position: relative;
-    text-align: center;
+.qr-page {
+    padding-top: 2rem;
 }
 
-.qr-back-btn {
-    position: absolute;
-    left: 1rem;
+.qr-page-nav{
+    z-index: 1;
+    position: fixed;
+    padding: 2rem;
 }
 
-.qr-page-nav > span {
+.qr-page > div {
     font-size: 18px;
+}
+
+.qr-text {
+    position: fixed;
+    padding-top: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
 }
