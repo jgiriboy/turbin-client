@@ -1,0 +1,14 @@
+.qr-page-nav {
+    padding: 4rem 2rem 1rem;
+    position: relative;
+    text-align: center;
+}
+
+.qr-back-btn {
+    position: absolute;
+    left: 1rem;
+}
+
+.qr-page-nav > span {
+    font-size: 18px;
+}

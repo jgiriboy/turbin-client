@@ -4,6 +4,7 @@ import MainPage from './components/mainPage/MainPage';
 import TurBinMap from './components/turbinMap/TurBinMap';
 import InfoPage from './components/infoPage/InfoPage';
 import AddressSearch from './components/turbinMap/AddressSearch';
+import QRPage from './components/qrPage/QRPage';
 
 const router = createBrowserRouter([
     { path: '/', element: <MainPage /> },
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
     {
         path: '/search',
         element: <AddressSearch />,
+    },
+    {
+        path: '/qrpage',
+        element: <QRPage />,
     },
 ]);
 

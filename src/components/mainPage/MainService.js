@@ -19,7 +19,7 @@ const MainService = () => {
                     alt=''
                 />
             </Link>
-            <Link to='/' className='index-QRcode index-service-box'>
+            <Link to='/qrpage' className='index-QRcode index-service-box'>
                 <span className='font-semibold'>리워드 받기</span>
                 <span>
                     QR 찍고
