@@ -5,6 +5,7 @@ import TurBinMap from './components/turbinMap/TurBinMap';
 import InfoPage from './components/infoPage/InfoPage';
 import AddressSearch from './components/turbinMap/AddressSearch';
 import QRPage from './components/qrPage/QRPage';
+import Statistics from './components/statistics/statistics';
 
 const router = createBrowserRouter([
     { path: '/', element: <MainPage /> },
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
     {
         path: '/qrpage',
         element: <QRPage />,
+    },
+    {
+        path: '/stat',
+        element: <Statistics />,
     },
 ]);
 

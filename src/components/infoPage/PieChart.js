@@ -7,10 +7,10 @@ import { ResponsivePie } from '@nivo/pie';
 // no chart will be rendered.
 // website examples showcase many properties,
 // you'll often use just a few of them.
-const PieChart = ({ data, chartColor }) => (
+const PieChart = ({ data, chartColor, fontsize, symbolsize, marginbottom }) => (
     <ResponsivePie
         data={data}
-        margin={{ top: 10, bottom: 10, left: 10, right: 10 }}
+        margin={{ top: 10, bottom: marginbottom, left: 10, right: 10 }}
         innerRadius={0.93}
         padAngle={0.7}
         cornerRadius={3}
@@ -45,26 +45,26 @@ const PieChart = ({ data, chartColor }) => (
              */
             legends: {
                 text: {
-                    fontSize: 0,
+                    fontSize: fontsize,
                     fill: '#000000',
                 },
             },
         }}
         legends={[
             {
-                anchor: 'center',
-                direction: 'column',
+                anchor: 'bottom',
+                direction: 'row',
                 justify: false,
-                translateX: 30,
-                translateY: -30,
                 itemsSpacing: 0,
-                itemWidth: 100,
+                translateY: 30,
+                translateX: 30,
+                itemWidth: 80,
                 itemHeight: 18,
-                itemTextColor: '#999',
+                itemTextColor: '#666',
                 itemDirection: 'left-to-right',
                 itemOpacity: 1,
-                symbolSize: 0,
-                symbolShape: 'circle',
+                symbolSize: symbolsize,
+                symbolShape: 'square',
                 effects: [
                     {
                         on: 'hover',

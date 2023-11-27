@@ -73,7 +73,13 @@ const ChartPage = ({ pinInfo }) => {
                 className='four-chart-box'
                 style={{ width: '40vw', height: '20vh' }}
             >
-                <PieChart data={totaldata} chartColor={totalColor} />
+                <PieChart
+                    data={totaldata}
+                    chartColor={totalColor}
+                    fontsize={0}
+                    symbolsize={0}
+                    marginbottom={10}
+                />
                 <div className='charts-description'>
                     <span>{totaldata[0].id}</span>
                     <span>{(totaldata[0].value / 400) * 100}%</span>
@@ -82,14 +88,26 @@ const ChartPage = ({ pinInfo }) => {
 
             <div className='info-charts'>
                 <div className='four-chart-box'>
-                    <PieChart data={generaldata} chartColor={generalColor} />
+                    <PieChart
+                        data={generaldata}
+                        chartColor={generalColor}
+                        fontsize={0}
+                        symbolsize={0}
+                        marginbottom={10}
+                    />
                     <div className='charts-description'>
                         <span>{generaldata[0].id}</span>
                         <span>{generaldata[0].value}%</span>
                     </div>
                 </div>
                 <div className='four-chart-box'>
-                    <PieChart data={candata} chartColor={canColor} />
+                    <PieChart
+                        data={candata}
+                        chartColor={canColor}
+                        fontsize={0}
+                        symbolsize={0}
+                        marginbottom={10}
+                    />
                     <div className='charts-description'>
                         <span>{candata[0].id}</span>
                         <span>{candata[0].value}%</span>
@@ -98,14 +116,26 @@ const ChartPage = ({ pinInfo }) => {
             </div>
             <div className='info-charts'>
                 <div className='four-chart-box'>
-                    <PieChart data={plasticdata} chartColor={plasticColor} />
+                    <PieChart
+                        data={plasticdata}
+                        chartColor={plasticColor}
+                        fontsize={0}
+                        symbolsize={0}
+                        marginbottom={10}
+                    />
                     <div className='charts-description'>
                         <span>{plasticdata[0].id}</span>
                         <span>{plasticdata[0].value}%</span>
                     </div>
                 </div>
                 <div className='four-chart-box'>
-                    <PieChart data={glassdata} chartColor={glassColor} />
+                    <PieChart
+                        data={glassdata}
+                        chartColor={glassColor}
+                        fontsize={0}
+                        symbolsize={0}
+                        marginbottom={10}
+                    />
                     <div className='charts-description'>
                         <span>{glassdata[0].id}</span>
                         <span>{glassdata[0].value}%</span>

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { QrReader } from 'react-qr-reader';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Html5QrcodePlugin from './Html5QrcodePlugin';
