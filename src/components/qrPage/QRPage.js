@@ -2,33 +2,28 @@ import React, { Component } from 'react';
 import { QrReader } from 'react-qr-reader';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import Html5QrcodePlugin from './Html5QrcodePlugin';
 
 import './QRPage.css';
 
 const QRPage = (props) => {
     const [data, setData] = useState('No result');
 
+    const onNewScanResult = (decodedText, decodedResult) => {
+        console.log(decodedText);
+    };
     return (
-        <div className='qr-page'>
-            <div className='qr-page-nav'>
-                <Link to='/'>
-                    <img src='/images/cancel.svg' />
+        <div className='qrcode-main'>
+            <nav className='qrcode-nav'>
+                <Link to='/' className='cancel-button'>
+                    <img src='images/cancel.svg' alt='' />
                 </Link>
-            </div>
-            <div className='qr-text'>코드 스캔</div>
-            <QrReader
-                onResult={(result, error) => {
-                    if (!!result) {
-                        setData(result?.text);
-                    }
-
-                    if (!!error) {
-                        console.info(error);
-                    }
-                }}
-                style={{ width: '100%', height: '100%' }}
-                constraints={{ facingMode: 'environment' }}
-            />
+                <div>
+                    <span className='code-scan-text'>코드스캔</span>
+                </div>
+                <div />
+            </nav>
+            <Html5QrcodePlugin />
         </div>
     );
 };
