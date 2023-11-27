@@ -1,9 +1,16 @@
 import './AddressList.css';
+import { useNavigate } from 'react-router-dom';
 
 const AddressList = (props) => {
+    const navigate = useNavigate();
+
+    const navigateToMap = () => {
+        navigate('/map', { state: props });
+    };
+
     return (
         <div className='address-list'>
-            <div className='address-list-first'>
+            <div className='address-list-first' onClick={navigateToMap}>
                 <div className='list-first-first'>
                     <img src='/images/pin.svg'></img>
                 </div>

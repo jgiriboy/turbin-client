@@ -115,6 +115,8 @@ const AddressSearch = () => {
                     addr={element.address}
                     distance={element.distance}
                     key={element.id}
+                    latitude={element.latitude}
+                    longitude={element.longitude}
                 />
             ))}
         </div>

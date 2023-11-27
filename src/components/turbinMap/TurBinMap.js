@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 import './TurBinMap.css';
 import MapNavbar from './MapNavbar';
@@ -13,6 +14,8 @@ const SERVER_URL =
 
 const TurBinMap = () => {
     const navigate = useNavigate();
+
+    const { state } = useLocation();
 
     const [pinInfo, setPinInfo] = useState([]);
     const [markers, setMarkers] = useState([]);
@@ -41,13 +44,17 @@ const TurBinMap = () => {
 
     useEffect(() => {
         fetchTurBinInfo();
+        console.log('State', state);
     }, []);
 
     // kakao map rendering
     useEffect(() => {
         const container = document.getElementById('map');
+        const lat = state ? state.latitude : 37.450699;
+        const lng = state ? state.longitude : 126.656855;
+
         const options = {
-            center: new kakao.maps.LatLng(37.450699, 126.656855),
+            center: new kakao.maps.LatLng(lat, lng),
             level: 3,
         };
         const map = new kakao.maps.Map(container, options);
