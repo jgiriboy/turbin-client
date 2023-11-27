@@ -40,9 +40,7 @@ class Test extends Component {
                 <QrReader
                     delay={this.state.delay}
                     style={previewStyle}
-                    constraints={{
-                        facingMode: 'environment',
-                    }}
+                    facingmode='rear'
                     onError={this.handleError}
                     onScan={this.handleScan}
                 />
