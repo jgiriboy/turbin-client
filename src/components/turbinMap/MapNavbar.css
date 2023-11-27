@@ -18,7 +18,7 @@
     align-items: center;
     justify-content: center;
     margin-left: 1rem;
-    box-shadow: .1rem .1rem .3rem #214C9F;
+    box-shadow: .1rem .1rem .2rem #214C9F;
 }
 
 .map-navbar-button > img {
@@ -38,6 +38,6 @@
     border-radius: 1rem;
     text-decoration: none;
     color: #999999;
-    box-shadow: .1rem .1rem .3rem #999999;
+    box-shadow: .1rem .1rem .2rem #999999;
     cursor: pointer;
 }

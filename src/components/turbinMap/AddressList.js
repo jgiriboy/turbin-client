@@ -1,6 +1,6 @@
 import './AddressList.css';
 
-const AddressList = () => {
+const AddressList = (props) => {
     return (
         <div className='address-list'>
             <div className='address-list-first'>
@@ -8,12 +8,12 @@ const AddressList = () => {
                     <img src='/images/pin.svg'></img>
                 </div>
                 <div className='list-first-second'>
-                    <span>1생활관</span>
-                    <span>인천시 미추홀구 소성로 40</span>
+                    <span>{props.title}</span>
+                    <span>{props.addr}</span>
                 </div>
             </div>
             <div className='address-list-second'>
-                <span>22m</span>
+                <span>{props.distance}m</span>
             </div>
         </div>
     );
