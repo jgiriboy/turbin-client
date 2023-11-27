@@ -3,7 +3,6 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 import './TurBinMap.css';
-import MapSearch from './MapSearch';
 import MapNavbar from './MapNavbar';
 import BottomPopup from './BottomPopup';
 
@@ -17,7 +16,6 @@ const TurBinMap = () => {
 
     const [pinInfo, setPinInfo] = useState([]);
     const [markers, setMarkers] = useState([]);
-    const [isPopupOpen, setIsPopupOpen] = useState(false);
     const [myPosition, setMyPosition] = useState({});
 
     const fetchTurBinInfo = async () => {
@@ -37,14 +35,8 @@ const TurBinMap = () => {
         navigate('/info', { state: curPin });
     };
 
-    const searchClickHandler = () => {
-        setIsPopupOpen((e) => true);
-        console.log('search clicked');
-    };
-
-    const mapClickHandler = () => {
-        setIsPopupOpen((e) => false);
-        console.log('map clicked');
+    const navigateToSearchPage = () => {
+        navigate('/search', { state: pinInfo });
     };
 
     useEffect(() => {
@@ -142,9 +134,8 @@ const TurBinMap = () => {
 
     return (
         <main className='map-main'>
-            <div id='map' onClick={mapClickHandler} />
-            <MapNavbar />
-            <MapSearch clickHandler={searchClickHandler} />
+            <div id='map' />
+            <MapNavbar searchbarClickHandler={navigateToSearchPage} />
         </main>
     );
 };

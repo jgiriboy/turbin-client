@@ -1,0 +1,71 @@
+@import url('../../css//reset.css');
+
+
+.address-search {
+    padding-top: 4rem;
+}
+
+.search-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem 1rem;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.search-nav-btn {
+    rotate: 180deg;
+    width: 1.4rem;
+    height: 1.4rem;
+}
+
+input {
+    outline: none;
+    border: none;
+    width: 100%;
+    height: 1rem;
+    margin: 0 2rem;
+    padding: .5rem 0;
+    font-size: 16px;
+    caret-color: #214C9F;
+}
+
+input:focus {
+    outline: none;
+}
+
+input::placeholder {
+    color: #999999;
+    font-family: Pretendard;
+}
+
+.search-bar-dummy {
+    padding: 1rem;
+    margin: 1rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.search-bar-dummy > div {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+}
+
+.dummy > img {
+    height: 1.5rem;
+    margin-right: .5rem;
+}
+
+.near-text {
+    padding: 1.5rem 2rem;
+}
+
+.near-text > span {
+    color: #999999;
+    font-size: 14px;
+}

@@ -1,0 +1,42 @@
+@import url('../../css/reset.css');
+
+.address-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.5rem;
+    padding-bottom: 2rem;
+}
+
+.list-first-first {
+    padding-right: 1rem;
+}
+
+.list-first-first > img{
+    height: 1.5rem;
+}
+
+.address-list-first {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.list-first-second {
+    display: flex;
+    flex-direction: column;
+}
+.list-first-second > span {
+    padding: .2rem 0;
+}
+span {
+    font-size: 14px;
+}
+.list-first-second > span:first-child {
+    font-weight: 500;
+}
+.list-first-second > span:nth-child(2) {
+    color: #999999;
+}
+.address-list-second > span {
+    color: #999999;
+}
