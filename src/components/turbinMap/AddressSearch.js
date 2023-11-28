@@ -25,15 +25,25 @@ const AddressSearch = () => {
             const { id, title, latitude, longitude } = element;
 
             geocoder.coord2Address(
-                state[0].longitude,
-                state[0].latitude,
+                element.longitude,
+                element.latitude,
                 (result) => {
+                    console.log(result);
+                    let addr = result[0].road_address
+                        ? result[0].road_address.address_name
+                        : result[0].address.address_name;
+                    if (
+                        result[0].road_address &&
+                        result[0].road_address.building_name
+                    ) {
+                        addr += ', ' + result[0].road_address.building_name;
+                    }
                     newList.push({
                         id: id,
                         title: title,
                         latitude: latitude,
                         longitude: longitude,
-                        address: result[0].road_address.address_name,
+                        address: addr,
                     });
                 }
             );
@@ -41,31 +51,35 @@ const AddressSearch = () => {
         setPinInfo(newList);
     }, []);
 
+    const searchHandler = () => {
+        geocoder.addressSearch(entered, (result, status) => {
+            if (status === kakao.maps.services.Status.OK) {
+                // console.log(result[0]);
+                pinInfo.map((element) => {
+                    const dist = getDistance(
+                        result[0].y,
+                        result[0].x,
+                        element.latitude,
+                        element.longitude
+                    );
+                    element.distance = parseInt(dist);
+                });
+                setNewInfo(
+                    [...pinInfo].sort((a, b) => {
+                        if (a.distance > b.distance) return 1;
+                        if (a.distance < b.distance) return -1;
+                        return 0;
+                    })
+                );
+            }
+        });
+
+        setEntered('');
+    };
+
     const handleOnKeyDown = (e) => {
         if (e.key === 'Enter') {
-            geocoder.addressSearch(entered, (result, status) => {
-                if (status === kakao.maps.services.Status.OK) {
-                    console.log(status);
-                    pinInfo.map((element) => {
-                        const dist = getDistance(
-                            result[0].y,
-                            result[0].x,
-                            element.latitude,
-                            element.longitude
-                        );
-                        element.distance = parseInt(dist);
-                    });
-                    setNewInfo(
-                        [...pinInfo].sort((a, b) => {
-                            if (a.distance > b.distance) return 1;
-                            if (a.distance < b.distance) return -1;
-                            return 0;
-                        })
-                    );
-                }
-            });
-
-            setEntered('');
+            searchHandler();
         }
     };
 
@@ -90,7 +104,11 @@ const AddressSearch = () => {
                     value={entered}
                 ></input>
 
-                <img src='/images/mic-icon.svg'></img>
+                <img
+                    src='/images/search.svg'
+                    className='search-btn'
+                    onClick={searchHandler}
+                ></img>
             </div>
             <div className='search-bar-dummy'>
                 <div className='dummy'>

@@ -7,6 +7,12 @@ const AddressList = (props) => {
     const navigateToMap = () => {
         navigate('/map', { state: props });
     };
+    let newDistance;
+    if (props.distance >= 1000) {
+        newDistance = (props.distance * 0.001).toFixed(1).toString() + 'k';
+    } else {
+        newDistance = props.distance.toLocaleString('en-US');
+    }
 
     return (
         <div className='address-list'>
@@ -20,7 +26,7 @@ const AddressList = (props) => {
                 </div>
             </div>
             <div className='address-list-second'>
-                <span>{props.distance}m</span>
+                <span>{newDistance}m</span>
             </div>
         </div>
     );
