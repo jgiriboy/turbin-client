@@ -10,7 +10,7 @@ const SavedBudget = ({ budget, title }) => {
                 <span>{title} 절감한 환경 비용</span>
                 <span>{saved} 원</span>
             </div>
-            <Link to='/map' className='spec-button'>
+            <Link to='/stat' className='spec-button'>
                 <span>자세히</span>
             </Link>
         </div>
