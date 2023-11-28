@@ -1,0 +1,45 @@
+
+.reward-page-nav {
+    background-color: #999999;
+    padding: .03rem;
+    margin: 0 1rem;
+}
+
+.reward-page-date > span {
+    color: #999999;
+    font-size: 16px;
+    padding: 1rem;
+    display: flex;
+}
+
+.reward-page-title > span {
+    font-size: 18px;
+    padding-left: 1rem;
+}
+
+.reward-page-log {
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-right: 1rem;
+}
+.reward-log-new {
+    margin-bottom: .5rem;
+}
+.reward-log-new > span {
+    font-size: 18px;
+    font-weight: 300
+}
+.reward-log-new > span:nth-child(2) {
+    color: #297EFF;
+    font-weight: 400;
+}
+
+.reward-total-reward {
+    color: #999999;
+}
+
+.reward-page {
+    margin-bottom: 1.5rem;
+}

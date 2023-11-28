@@ -16,11 +16,15 @@ const InfoPage = () => {
                 budget={state.saved_budget}
                 title={'이달'}
                 noSpec={true}
+                description='절감한 환경 비용'
+                pointUnits='원'
             />
             <SavedBudget
                 budget={state.saved_budget}
                 title={'올해'}
                 noSpec={true}
+                description='절감한 환경 비용'
+                pointUnits='원'
             />
         </main>
     );

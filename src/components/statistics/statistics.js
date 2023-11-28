@@ -93,7 +93,13 @@ const Statistics = () => {
             </div>
 
             <div className='stat-budget'>
-                <SavedBudget budget={3141} title={'이달'} noSpec={false} />
+                <SavedBudget
+                    budget={3141}
+                    title={'이달'}
+                    noSpec={false}
+                    description='절감한 환경 비용'
+                    pointUnits='원'
+                />
             </div>
             <div style={{ width: '100%', height: '40vh' }}>
                 <BarGraph data={bardata} chartColor={colorScale} />
