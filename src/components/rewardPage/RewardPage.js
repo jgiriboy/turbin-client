@@ -32,18 +32,18 @@ const RewardPage = () => {
                 totalBudget={1595}
                 newBudget={495}
                 newDate='2023. 11. 28. 10:29:49'
-                newTitle='하이테크센터'
+                newTitle='인하아리스타'
             />
             <RewardLog
                 totalBudget={1100}
                 newBudget={600}
-                newDate='2023. 11. 28. 10:29:49'
-                newTitle='하이테크센터'
+                newDate='2023. 11. 26. 13:39:10'
+                newTitle='기은 하우스'
             />
             <RewardLog
                 totalBudget={500}
                 newBudget={500}
-                newDate='2023. 11. 28. 10:29:49'
+                newDate='2023. 11. 25. 13:49:35'
                 newTitle='하이테크센터'
             />
         </div>
