@@ -1,0 +1,32 @@
+.reward-nav {
+    width: 100%;
+    padding-top: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.reward-nav > div:first-child, .reward-nav > div:nth-child(3) {
+    flex: 1;
+}
+.reward-nav > div:nth-child(2) {
+    flex: 2;
+}
+
+.reward-back-btn-img {
+    rotate: 180deg;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-left: 1rem;
+}
+.reward-nav-title {
+    text-align: center;
+}
+
+.reward-nav-title > span {
+    font-weight: 500;
+    font-size: 16px;
+}
+.reward-nav-title > span:first-child {
+    color: #214C9F;
+}

@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 import './MainReward.css';
 
@@ -37,6 +38,9 @@ const MainReward = () => {
                     <span className='font-regular'>{rewardInfo.reward} 원</span>
                 </div>
             </div>
+            {/* <Link to='/reward-page' className='user-reward-button'>
+                <span>리워드 적립 내역</span>
+            </Link> */}
             <div className='user-reward-button'>
                 <span>리워드 적립 내역</span>
             </div>

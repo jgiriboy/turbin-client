@@ -12,8 +12,16 @@ const InfoPage = () => {
         <main className='info-main'>
             <InfoNavbar title={state.title} lastUpdated={state.last_updated} />
             <ChartPage pinInfo={state} />
-            <SavedBudget budget={state.saved_budget} title={'이달'} />
-            <SavedBudget budget={state.saved_budget} title={'올해'} />
+            <SavedBudget
+                budget={state.saved_budget}
+                title={'이달'}
+                noSpec={true}
+            />
+            <SavedBudget
+                budget={state.saved_budget}
+                title={'올해'}
+                noSpec={true}
+            />
         </main>
     );
 };

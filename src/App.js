@@ -6,6 +6,7 @@ import InfoPage from './components/infoPage/InfoPage';
 import AddressSearch from './components/turbinMap/AddressSearch';
 import QRPage from './components/qrPage/QRPage';
 import Statistics from './components/statistics/statistics';
+import RewardPage from './components/rewardPage/RewardPage';
 
 const router = createBrowserRouter([
     { path: '/', element: <MainPage /> },
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
     {
         path: '/stat',
         element: <Statistics />,
+    },
+    {
+        path: '/reward-page',
+        element: <RewardPage />,
     },
 ]);
 
