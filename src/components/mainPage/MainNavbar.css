@@ -3,7 +3,8 @@
 .index-nav {
     display: flex;
     justify-content: space-between;
-    padding: 3rem 2rem 1.5rem 2rem;
+    padding: calc(1rem, env(safe-area-inset-top)) 1.5rem;
+    
 }
 
 .nav-logo{
