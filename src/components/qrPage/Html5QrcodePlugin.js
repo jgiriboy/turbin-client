@@ -68,11 +68,16 @@ const Html5QrcodePlugin = () => {
                 turbinName: namelist[Math.floor(Math.random() * 10)],
                 totalReward: TOTAL_REWARD + userReward,
             });
-            alert('리워드 적립!');
-            window.location.href = '/';
+
+            html5Qrcode.stop().then((ignore) => {
+                alert('리워드 적립!');
+                window.location.href = '/';
+            });
         } else {
-            alert('유효한 QR이 아닙니다');
-            window.location.href = '/';
+            html5Qrcode.stop().then((ignore) => {
+                alert('유효한 QR이 아닙니다');
+                window.location.href = '/';
+            });
         }
         scanning = false;
     }
