@@ -43,7 +43,7 @@ const Html5QrcodePlugin = () => {
     }
 
     async function onScanSuccess(decodedText, decodedResult) {
-        if (decodedText == 'reward') {
+        if (decodedText == 'reward' && scanning) {
             const userReward = Math.floor(Math.random() * 100);
             const response = await axios.post(SERVER_URL + decodedText, {
                 userid: 1,
