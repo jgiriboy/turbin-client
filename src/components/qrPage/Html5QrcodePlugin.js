@@ -1,16 +1,22 @@
 import { Html5Qrcode } from 'html5-qrcode';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 const SERVER_URL =
     'https://port-0-turbin-server-cn1vmr2clpfb98ea.sel5.cloudtype.app/';
-// const SERVER_URL = 'http://localhost:8000/';
 
 const Html5QrcodePlugin = () => {
     let TOTAL_REWARD;
     axios.get(SERVER_URL + 'reward').then((res) => {
         TOTAL_REWARD = res.data.reward;
     });
+
+    const [qrStatus, setQrStatus] = useState(0);
+
+    const fetchQrStatus = async () => {
+        const response = await axios.get(SERVER_URL + 'qrcode');
+        setQrStatus(response.data.status);
+    };
 
     let scanning = false;
     let html5Qrcode;
@@ -43,8 +49,8 @@ const Html5QrcodePlugin = () => {
     }
 
     async function onScanSuccess(decodedText, decodedResult) {
-        if (decodedText == 'reward' && scanning) {
-            const userReward = Math.floor(Math.random() * 100);
+        if (decodedText === 'reward' && scanning && qrStatus === 1) {
+            const userReward = Math.floor(Math.random() * 100) + 10;
             const response = await axios.post(SERVER_URL + decodedText, {
                 userid: 1,
                 value: userReward,
@@ -71,6 +77,7 @@ const Html5QrcodePlugin = () => {
 
             html5Qrcode.stop().then((ignore) => {
                 alert('리워드 적립!');
+                axios.post(SERVER_URL + 'qrcode', { id: 'qr', qrStatus: 0 });
                 window.location.href = '/';
             });
         } else {
@@ -87,6 +94,7 @@ const Html5QrcodePlugin = () => {
     }
 
     useEffect(() => {
+        fetchQrStatus();
         init();
         start();
     }, []);
