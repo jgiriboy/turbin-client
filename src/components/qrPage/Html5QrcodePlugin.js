@@ -11,11 +11,11 @@ const Html5QrcodePlugin = () => {
         TOTAL_REWARD = res.data.reward;
     });
 
-    const [qrStatus, setQrStatus] = useState(0);
+    let qrStatuscode = 0;
 
     const fetchQrStatus = async () => {
         const response = await axios.get(SERVER_URL + 'qrcode');
-        setQrStatus(response.data.status);
+        qrStatuscode = response.data.status;
     };
 
     let scanning = false;
@@ -49,7 +49,8 @@ const Html5QrcodePlugin = () => {
     }
 
     async function onScanSuccess(decodedText, decodedResult) {
-        if (decodedText === 'reward' && scanning && qrStatus === 1) {
+        console.log(qrStatuscode);
+        if (decodedText === 'reward' && scanning && qrStatuscode === 1) {
             const userReward = Math.floor(Math.random() * 100) + 10;
             const response = await axios.post(SERVER_URL + decodedText, {
                 userid: 1,
