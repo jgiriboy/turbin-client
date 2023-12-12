@@ -13,10 +13,11 @@ const MainNavbar = () => {
 
     return (
         <nav className='index-nav'>
-            <span className='nav-logo font-semibold'>TurBin</span>
+            <span onClick={enableQrScan} className='nav-logo font-semibold'>
+                TurBin
+            </span>
             <div className='nav-menu'>
                 <img
-                    onClick={enableQrScan}
                     src='/images/coupon.svg'
                     className='nav-menu-item'
                     alt=''
