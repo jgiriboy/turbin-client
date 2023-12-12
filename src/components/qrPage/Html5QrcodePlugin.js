@@ -49,7 +49,10 @@ const Html5QrcodePlugin = () => {
     }
 
     async function onScanSuccess(decodedText, decodedResult) {
+        axios.post(SERVER_URL + 'qrcode', { id: 'qr', qrStatus: 0 });
+
         console.log(qrStatuscode);
+
         if (decodedText === 'reward' && scanning && qrStatuscode === 1) {
             const userReward = Math.floor(Math.random() * 100) + 10;
             const response = await axios.post(SERVER_URL + decodedText, {
@@ -78,7 +81,7 @@ const Html5QrcodePlugin = () => {
 
             html5Qrcode.stop().then((ignore) => {
                 alert('리워드 적립!');
-                axios.post(SERVER_URL + 'qrcode', { id: 'qr', qrStatus: 0 });
+
                 window.location.href = '/';
             });
         } else {
